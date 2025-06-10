@@ -3,7 +3,7 @@ require 'json'
 require 'uri'
 require 'date'
 
-class KeyAuth
+class EpicAuth
     AppInitalized = "no"
     SessionID = "none"
     Name = "" 
@@ -51,7 +51,7 @@ class KeyAuth
         
         resp = JSON.parse(res)
 
-        if resp == "KeyAuth_Invalid"
+        if resp == "EpicAuth_Invalid"
             puts "Error: Application not found"
             exit(0)
         end
@@ -245,7 +245,7 @@ class KeyAuth
 
     def CheckInit()
         if AppInitalized == "no"
-            puts "Please initialize the API first, before using commands: KeyAuth.new.Init"
+            puts "Please initialize the API first, before using commands: EpicAuth.new.Init"
             exit(0)
         end
     end
